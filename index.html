@@ -8,6 +8,20 @@
 </head>
 <body>
     <main>
+        <div role="tablist" class="tablist">
+            <button role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">タブ１</button>
+            <button role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">タブ２</button>
+            <button role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">タブ３</button>
+        </div>
+        <div role="tabpanel" id="panel1" aria-labelledby="tab1" tabindex="0">
+            <p>タブの１番目です</p>
+        </div>
+        <div role="tabpanel" id="panel2" aria-labelledby="tab2" tabindex="-1" hidden>
+            <p>タブの２番目です</p>
+        </div>
+        <div role="tabpanel" id="panel3" aria-labelledby="tab3" tabindex="-1" hidden>
+            <p>タブの３番目です</p>
+        </div>
     </main>
     <!-- Your content goes here -->
     <script type='text/javascript' src="index.js"></script>
