@@ -14,3 +14,28 @@ tabList.addEventListener("click", (e)=> {
 
     currentIndex = targetIndex
 })
+
+window.addEventListener("DOMContentLoaded", () => {
+    let tabFocus = 0;
+    tabList.addEventListener("keydown", e => {
+        if (e.keyCode === 37 || e.keyCode === 39) {
+            tabs[tabFocus].setAttribute("tabindex", -1)
+            // when pressing <-
+            if (e.keyCode === 37) {
+                tabFocus--;
+                if (tabFocus < 0) {
+                    tabFocus = tabs.length - 1
+                }
+            }
+            // when pressing ->
+            if (e.keyCode === 39) {
+                tabFocus++;
+                if (tabFocus >= tabs.length) {
+                    tabFocus = 0
+                }
+            }
+        }
+        tabs[tabFocus].setAttribute("tabindex", 0)
+        tabs[tabFocus].focus()
+    })
+})
